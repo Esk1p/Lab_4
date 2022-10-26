@@ -98,6 +98,49 @@ public void QuitGame(){
 
 ![J1M6kLFPcw](https://user-images.githubusercontent.com/91608946/198145086-bae8b79c-5520-459b-bbb9-1ce104e952d2.gif)
 
+2. Теперь добавим нашей игре дополнительный функционал - возможность поставить игру на паузу и выхода в главное меню. Для этого создадим скрипт Pause и создадим объект Text, который в дальнейшем подключим к написанному нами скрипут. Скрипт выглядит следующим образом:
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class Pause : MonoBehaviour
+{
+
+    private bool paused = false;
+    
+    public GameObject panel;
+    void Update()
+    {
+         if (Input.GetKeyDown(KeyCode.Space)){
+            if(!paused){
+                Time.timeScale = 0;
+                paused = true;
+                panel.SetActive(true);
+            }
+            else{
+                Time.timeScale = 1;
+                paused = false;
+                panel.SetActive(false);
+            }
+    
+         }
+
+         if (Input.GetKeyDown(KeyCode.Escape)){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            Time.timeScale = 1;
+            paused = false;
+            panel.SetActive(false);
+         }
+        
+    }
+}
+
+```
+После этого подключим написанный нами скрипт к объекту MainCamer. В результате выполнения скрипта получаем следующий функционал:
+
+![VknBr4oxVH](https://user-images.githubusercontent.com/91608946/198146178-1fce8cbc-e88f-47bb-b8c3-493e3bc464a1.gif)
+
 
 
 
