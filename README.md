@@ -64,6 +64,7 @@
 
 ### 2) Создание стартовой сцены и переключение между ними
 1. Создадм тайтл. Для этого создадим объект Text. Затем скачаем ассет со шрифтами. Я выбрал ассет "Free Pixel Font - Thaleah".
+ 
  ![image](https://user-images.githubusercontent.com/91608946/198117660-0f16b895-1a25-4883-bbf5-50efc87730ea.png)
  Настроим расположение тайтла на экране и получим следующее: 
  ![image](https://user-images.githubusercontent.com/91608946/198117834-31b32ee0-e8cd-4d28-ae95-cd9d6e5ea4d0.png)
