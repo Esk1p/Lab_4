@@ -63,6 +63,35 @@
 ![VcNAdQJaeR](https://user-images.githubusercontent.com/91608946/198102701-e77919f9-f4bf-4dbe-87e9-7347432e8c5a.gif)
 
 ### 2) Создание стартовой сцены и переключение между ними
+1. Создадм тайтл. Для этого создадим объект Text. Затем скачаем ассет со шрифтами. Я выбрал ассет "Free Pixel Font - Thaleah".
+ ![image](https://user-images.githubusercontent.com/91608946/198117660-0f16b895-1a25-4883-bbf5-50efc87730ea.png)
+ Настроим расположение тайтла на экране и получим следующее: 
+ ![image](https://user-images.githubusercontent.com/91608946/198117834-31b32ee0-e8cd-4d28-ae95-cd9d6e5ea4d0.png)
+2. Затем создадим пустой объект и назовем его MainMenu. В нем будут храниться все кнопки главного меню, а именно: Play, Option и Exit. После этого создадим скрипт, в котором пропишем функционал наших кнопок. Код выглядит следующим образом:
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MainMenu : MonoBehaviour
+{
+public void PlayGame(){
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+}
+
+public void QuitGame(){
+    Application.Quit();
+}
+}
+```
+3. Затем расположим кнопки на экране так, чтобы игроку было удобно с ними взаимодействовать, после этого найдем ассет, который будет вписывать в наш дизайн. Я выбрал ассет 2D UI Buttons Free Package for unity developer by Javedkhanme
+![image](https://user-images.githubusercontent.com/91608946/198118526-b8ed4f4d-c9ac-48c7-bbfd-b5832cff3321.png)
+
+4. Затем подключим ранее написанный скрипт к кнопкам главного меню через компонент Button и получаем следующий результат:
+![CEbwYqNQnS](https://user-images.githubusercontent.com/91608946/198119294-82517f18-8f01-499d-9e91-f64b2e45d526.gif)
+
+
 
 
 
