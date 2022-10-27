@@ -141,6 +141,19 @@ public class Pause : MonoBehaviour
 
 ![VknBr4oxVH](https://user-images.githubusercontent.com/91608946/198146178-1fce8cbc-e88f-47bb-b8c3-493e3bc464a1.gif)
 
+### 4) Добавление звукового сопровождения в игре
+
+1. Для начала добавим музыкальное сопровождение как в главное меню, так в и в сам игровой процесс. Для этого подключим к камере в сцене 0 и 1 компонент AudioSourse и добавим в него музыку на наш в кус в формате wav. Также зациклим ее, активировав параметр Loop.
+2. Затем добавим все тот же компонент к префабу Taddy и Case, убрав параметр PlayOnAwake, добавим звуки на свой вкус. Затем отредактируем скрипты Case и Taddy, добавив туда следующие строки:
+```c#
+public AudioSource audioSource;
+audioSource = GetComponent<AudioSource>();
+audioSource.Play();
+```
+В итоге получаем следущее:
+
+https://user-images.githubusercontent.com/91608946/198162730-5323402b-9278-41dc-9bad-a5bbcb719f6b.mp4
+
 
 
 
@@ -148,7 +161,10 @@ public class Pause : MonoBehaviour
 
 
 ## Задание 2
-### 
+###
+
+
+
 
 
 
