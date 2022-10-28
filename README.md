@@ -162,6 +162,41 @@ https://user-images.githubusercontent.com/91608946/198162730-5323402b-9278-41dc-
  
 ## Задание 3
 ### Добавить в меню Option возможность изменения громкости (от 0 до 100%) фоновой музыки в игре.
+1) Для редактирования музыки создадим слайдер и поместим его в меню настроек
+2) Затем создадим крипт MusciLvl для редактирования уровня громкости:
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MusicLvl : MonoBehaviour
+{
+    private AudioSource audioSource;
+    private float musicVolume = 1f;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        audioSource.volume = musicVolume;
+    }
+
+    public void SetVolume (float vol){
+        musicVolume = vol;
+    }
+}
+
+```
+Этот скрипт создает связь между значенем парамерта Volume компонента AudioSource и параметром Value объекта Slider. В итоге получаем следующий результат:
+
+
+https://user-images.githubusercontent.com/91608946/198661556-cdf4dc8c-9686-4f42-821b-85e49384e1fa.mp4
+
+
 
 
 
